@@ -1,0 +1,50 @@
+* Doom Emacs config
+
+** User Identity
+
+#+BEGIN_SRC emacs-lisp :results none
+;; Some functionality uses this to identify you, e.g. GPG configuration, email
+;; clients, file templates and snippets. It is optional.
+(setq user-full-name "Denis Strizhkin"
+      user-mail-address "strdenis02@gmail.com")
+#+END_SRC
+
+** Visual
+
+#+BEGIN_SRC emacs-lisp :results none
+;; There are two ways to load a theme. Both assume the theme is installed and
+;; available. You can either set `doom-theme' or manually load a theme with the
+;; `load-theme' function. This is the default:
+(setq doom-theme 'doom-one)
+
+;; This determines the style of line numbers in effect. If set to `nil', line
+;; numbers are disabled. For relative line numbers, set this to `relative'.
+(setq display-line-numbers-type t)
+#+END_SRC
+
+** Org
+
+#+BEGIN_SRC emacs-lisp :results none
+(setq org-directory "~/org/")
+#+END_SRC
+
+** openwith
+
+#+BEGIN_SRC emacs-lisp :results none
+(use-package! openwith
+  :config
+  (setq openwith-associations (list
+       (list (openwith-make-extension-regexp
+              '("m4v" "mp4" "MP4" "MTS" "mpg" "mov" "avi" "AVI" "flv" "mkv" "webm"))
+             "mpv"
+             '(file))))
+  (openwith-mode 1))
+#+END_SRC
+
+** company
+
+#+BEGIN_SRC emacs-lisp :results none
+(after! company
+  (setq company-idle-delay 0.0
+        company-minimum-prefix-length 1))
+#+END_SRC
