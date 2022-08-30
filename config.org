@@ -37,6 +37,10 @@
        (list (openwith-make-extension-regexp
               '("m4v" "mp4" "MP4" "MTS" "mpg" "mov" "avi" "AVI" "flv" "mkv" "webm"))
              "mpv"
+             '(file))
+       (list (openwith-make-extension-regexp
+              '("pdf"))
+             "zathura"
              '(file))))
   (openwith-mode 1))
 #+END_SRC
@@ -47,4 +51,12 @@
 (after! company
   (setq company-idle-delay 0.0
         company-minimum-prefix-length 1))
+#+END_SRC
+
+** Indentation
+
+#+BEGIN_SRC emacs-lisp :results none
+(add-hook! 'java-mode-hook
+  (setq tab-width 2
+        standard-indent 2))
 #+END_SRC
