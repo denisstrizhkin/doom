@@ -25,7 +25,7 @@
 ** Org
 
 #+BEGIN_SRC emacs-lisp :results none
-(setq org-directory "~/Desktop/GDrive/org")
+(setq org-directory "~/Desktop/ftp-homeserver/org")
 #+END_SRC
 
 ** openwith
