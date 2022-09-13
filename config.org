@@ -65,7 +65,14 @@
 
 #+BEGIN_SRC emacs-lisp :results none
 (after! dap-mode
-  (setq dap-python-debugger 'debugpy))
+  (setq dap-python-debugger 'debugpy)
+  (add-hook! 'dap-stopped-hook
+            (call-interactively #'dap-hydra))
+  (add-hook! 'python-mode-hook
+             (dap-ui-mode)))
+
+(after! lsp-mode
+  (setq lsp-pyright-typechecking-mode "off"))
 
 (map! :map dap-mode-map
       :leader
