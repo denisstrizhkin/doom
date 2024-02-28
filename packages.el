@@ -5,6 +5,12 @@
 ;; on the command line, then restart Emacs for the changes to take effect -- or
 ;; use 'M-x doom/reload'.
 
+(package! ebuild-mode
+  :recipe (:host nil :type git :repo "https://gitweb.gentoo.org/proj/ebuild-mode.git"))
+(package! company-ebuild
+  :recipe (:host nil :type git :repo "https://gitweb.gentoo.org/proj/company-ebuild.git"))
+(package! emacs-ebuild-snippets
+  :recipe (:host nil :type git :repo "https://gitweb.gentoo.org/proj/emacs-ebuild-snippets.git" :files ("*" (:exclude ".git"))))
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;; (package! some-package)

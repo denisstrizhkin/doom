@@ -22,7 +22,7 @@
 ;; accept. For example:
 ;;
 (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 15 :weight 'semi-light)
-     doom-variable-pitch-font (font-spec :family "Noto Sans" :size 15))
+      doom-variable-pitch-font (font-spec :family "Noto Sans" :size 15))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -75,4 +75,7 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 (remove-hook 'doom-first-input-hook
-    #'evil-snipe-mode)
+             #'evil-snipe-mode)
+
+(after! ebuild-mode
+  (set-company-backend! 'ebuild-mode 'company-ebuild 'company-shell 'company-yasnippet))
